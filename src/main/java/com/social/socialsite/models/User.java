@@ -1,29 +1,45 @@
 package com.social.socialsite.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
+	
+	@Id
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
 
 	public User() {
 		//
 	}
 	
-	public User(String firstName, String lastName, String email, String password) {
+	public User(Integer id, String firstName, String lastName, String email, String password) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 	}
 
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String password;
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	this.firstName = firstName;
 	}
 
 	public String getLastName() {
