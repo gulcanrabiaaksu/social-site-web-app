@@ -2,6 +2,8 @@ package com.social.socialsite.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -10,15 +12,17 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	@Column(name="my_name")
+	@Column
 	private String firstName;
-	
+	@Column
 	private String lastName;
 	
-	@Column(name="gmail")
+	@Column
 	private String email;
+	
 	private String password;
 
 	public User() {
