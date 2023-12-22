@@ -1,20 +1,28 @@
 package com.social.socialsite.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="user")
 public class User {
 	
 	@Id
 	private Integer id;
+	
+	@Column(name="my_name")
 	private String firstName;
+	
 	private String lastName;
+	
+	@Column(name="gmail")
 	private String email;
 	private String password;
 
 	public User() {
-		//
+		//TODO 
 	}
 	
 	public User(Integer id, String firstName, String lastName, String email, String password) {
